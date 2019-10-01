@@ -12,7 +12,16 @@ class VenueCategoryChain extends \Mim\Model
 
     protected static $table = 'venue_category_chain';
 
-    protected static $chains = [];
+    protected static $chains = [
+        'venue' => [
+            'model' => 'Venue\\Model\\Venue',
+            'field' => 'id'
+        ],
+        'venue_category' => [
+            'model' => 'VenueCategory\\Model\\VenueCategory',
+            'field' => 'id'
+        ]
+    ];
 
     protected static $q = [];
 }
